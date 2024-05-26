@@ -1,8 +1,6 @@
 """DES encryption in ECB mode"""
 
 KEY = "F7AC7D10C9F8145F"
-M = "Bebebe"
-
 
 # fmt: off
 # Permuted Choice 1
@@ -271,9 +269,10 @@ def des(m, key, decrypt=False):
 
 
 if __name__ == "__main__":
-    print("Message:", M)
+    input_message = input("Type or copy your message here: ")
+    print("Message:", input_message)
 
-    ciphertext = encrypt(M, KEY)
+    ciphertext = encrypt(input_message, KEY)
     print("Ciphertext (hex):", ciphertext)
 
     message = decrypt(ciphertext, KEY)
